@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="我与ponyai., 叶正宇的Blog">
+    <meta name="keywords" content="SimpleDB, 叶正宇的Blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>我与ponyai. | 叶正宇的Blog</title>
+    <title>SimpleDB | 叶正宇的Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -266,12 +266,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">我与ponyai.</h1>
+                    <h1 class="description center-align post-title">SimpleDB</h1>
                 </div>
             </div>
         </div>
@@ -423,11 +423,18 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="我与Ponyai"><a href="#我与Ponyai" class="headerlink" title="#我与Ponyai"></a>#我与Ponyai</h3><p>初识Ponyai, 是偶然在牛客上看到的一个大神的帖子, 大神东南大学本科, 清华硕士. 给我的印象是大神前后端贯通, 算法也强, 可以说拿遍外企, 国内互联网的Offer. 大神最后选择了Ponyai.</p>
-<p>这是我对Ponyai的第一印象</p>
-<p>再次与Pony相遇是因为脉脉上和Ponyai的HR认识了, 那时是大三上学期末, 快放寒假的时候, 我们约了年后面试. 经过 三轮Coding + 一轮技术 + 一轮综合, 我顺利拿到了Ponyai的Offer. 但是此时我手上还有阿里云核心实习和腾讯WXG的实习. 我犹豫了</p>
-<p>在咨询了许多前辈的意见后, 我决定拒掉Pony的offer.理由是实习的话阿里对自己履历提升会更大一些.</p>
-<p>最后我去了阿里云实习, 研究方向是分布式存储.</p>
+                <p>今天算是把Lab1都做完了, 前前后后大概花了5天时间</p>
+<p>Lab1 主要是对整体有一个认知, </p>
+<p>实现了一个数据库的大致框架</p>
+<p>主要是做物理层的存储</p>
+<p>我这里就从一个Page来说, 一个page 对应请求来说, 都是从buffer pool里拿, 这里的策略就是BufferPool在内存里, 由Buffer Pool作为代理, Buffer Pool 提供getPage方法, 输入tableid, transitionid, pageid 就可以拿到这个page了.</p>
+<p> 首先会尝试去拿缓存里面的Page, 拿不到再去请求HeapFile里面的 .</p>
+<p>HeapFile是我们写的最接近底层的类, 具体来说就是把许多的HeapPage连起来写进一个文件里, 每次读4k就是一个Page了.</p>
+<p>从此我们应该不用考虑硬件的了</p>
+<p>这里HeapFile是我们的一种存储形式, 后续可能会有B-Tree;</p>
+<p><img src="D:\youdaoSave111\qq74FD79E12466852BF6730A061245DDAA\4327558c1c814d7491c4a41d5379ff65\clipboard.png" alt="img"></p>
+<p>一个HeapFile 里面有许多HeapPage , 然后一个HeapPage里面有一个Header, 很多条Record, 当然这里面 Page的大小默认是4096Byte, Header是要做字节对齐的, Record是定长的, Record一条对应着一条Tuple Tuple就是一条记录啦, 然后字段是Int 和 fixed_string , 所以一条记录的大小是确定的, 每个页剩下的地方补0;</p>
+<p><img src="D:\youdaoSave111\qq74FD79E12466852BF6730A061245DDAA\df1810e003c74587a45478dc4a4d1fd3\clipboard.png" alt="img"></p>
 
                 
             </div>
@@ -454,7 +461,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://yahoo17.github.io/2021/04/03/%E6%88%91%E4%B8%8Eponyai-0/">https://yahoo17.github.io/2021/04/03/%E6%88%91%E4%B8%8Eponyai-0/</a>
+                    <a href="https://yahoo17.github.io/2021/04/03/SimpleDB/">https://yahoo17.github.io/2021/04/03/SimpleDB/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -927,9 +934,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/04/03/SimpleDB/">
                     <div class="card-image">
@@ -947,9 +955,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-03
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-03
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -958,6 +966,7 @@
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -968,13 +977,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/02/05/20%E5%B2%81-%E4%BD%95%E5%A6%A8%E5%90%9F%E5%95%B8%E4%B8%94%E5%BE%90%E8%A1%8C/">
+                <a href="/2021/04/03/%E6%88%91%E4%B8%8Eponyai-0/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="20岁,何妨吟啸且徐行">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="我与ponyai.">
                         
-                        <span class="card-title">20岁,何妨吟啸且徐行</span>
+                        <span class="card-title">我与ponyai.</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -985,7 +994,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-05
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-03
                             </span>
                         <span class="publish-author">
                             
